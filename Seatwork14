@@ -1,0 +1,48 @@
+public class Main { // Added a class declaration
+
+    public static void main(String[] args) {
+        Motorcycle m = new Motorcycle();
+        m.make = "Yamaha RZ350";
+        m.color = "yellow";
+
+        System.out.println("Calling showAtts...");
+        m.showAtts();
+
+        System.out.println("----------"); // Corrected the empty println and added a separator
+        System.out.println("Starting engine...");
+        m.startEngine();
+
+        System.out.println("----------"); // Added a separator
+        System.out.println("Calling showAtts...");
+        m.showAtts();
+
+        System.out.println("----------"); // Added a separator
+        System.out.println("Starting engine...");
+        m.startEngine();
+    }
+}
+
+class Motorcycle { // Added a Motorcycle class definition
+    String make;
+    String color;
+    boolean engineRunning;
+
+    public Motorcycle() {
+        engineRunning = false; // Initialize engine state
+    }
+
+    void showAtts() {
+        System.out.println("Make: " + make);
+        System.out.println("Color: " + color);
+        System.out.println("Engine running: " + engineRunning);
+    }
+
+    void startEngine() {
+        if (!engineRunning) {
+            System.out.println("Engine started.");
+            engineRunning = true;
+        } else {
+            System.out.println("Engine is already running.");
+        }
+    }
+}
